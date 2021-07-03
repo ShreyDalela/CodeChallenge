@@ -6,13 +6,13 @@ The below graph will help you traverse through the directories
       .                
       ├── Challenge-1                         #Solution For Challenge 1                         
       |   ├── 3-Tier App
-      |   |   ├── LB
-      |	  |   ├── VM
-      |	  |   ├── dsc
-      |   |   ├── Set-Credentials.ps1
-      |   |   ├── outputs.tf
-      |   |   ├── var-declaration.tf
-      |   |   └── vnet.tf   
+      |   |    ├── LB
+      |   |    ├── VM
+      |   |    ├── dsc
+      |   |    ├── Set-Credentials.ps1
+      |   |    ├── outputs.tf
+      |   |    ├── var-declaration.tf
+      |   |    └── vnet.tf   
       |   └── Readme.md
       ├── Challenge-2                         #Solution For Challenge 2                          
       |   ├── Get-InstanceMetadataAWS.ps1

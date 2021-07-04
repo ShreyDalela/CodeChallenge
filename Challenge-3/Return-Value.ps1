@@ -2,7 +2,7 @@
 function Return-Value ($ObjectStr, $Key)
 {
 
-                $Validation = $ObjectStr -replace '[\s{\}\:\^a-zA-Z\”\“]+'
+                $Validation = $ObjectStr -replace '[\s{\}\:\^a-zA-Z\”\“\^0-9\,\"]+' #Expanding Regex exceptance 
 
                      #Object Check
                      if ($Validation.length -ge 1)
@@ -16,7 +16,7 @@ function Return-Value ($ObjectStr, $Key)
 
                 #handeling key Depth exception
                 $Key_Depth =$positionlast = ForEach ( $match in ($key | select-String "/" -allMatches).matches ){$match.Index}
-                $Depth = $positionlast = ForEach ( $match in ($object | select-String "}" -allMatches).matches ){$match.Index}
+                $Depth = $positionlast = ForEach ( $match in ($ObjectStr | select-String "}" -allMatches).matches ){$match.Index}
 
                 if ($Key_Depth.count -ge $Depth.Count)
                                         {

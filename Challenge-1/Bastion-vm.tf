@@ -46,4 +46,16 @@ resource "azurerm_virtual_machine" "Bastion-vm" {
       protocol = "http"
     }
   }
+    
+#Create Bastion resource
+resource "azurerm_bastion_host" "BastionHost" {
+  name                = "Bastion-${var.app_env}"
+  location            = "${azurerm_resource_group.ResourceGroup.location}"
+  resource_group_name = "${azurerm_resource_group.ResourceGroup.name}"
 
+  ip_configuration {
+    name                 = "configuration-${var.app_env}"
+    subnet_id            = "${azurerm_subnet.BastionSubnet.id}"
+    public_ip_address_id = "${azurerm_public_ip.PublicIP.id}"
+  }
+}

@@ -8,32 +8,26 @@ Install-MOdule AWS.Tools.EC2,AWS.Tools.Common -force -AllowClobber
 
 
 #Mandatory Input For AWS connections
-$AccessKey =  Read-Host "Kindly Provide your Access Key"
-$SecretKey = Read-Host "Enter Client Secret" -AsSecureString
-
+$AccessKey = Read-Host "Kindly Provide your Access Key"
+$SecretKey = Read-Host "Enter Client Secret" 
+$reg
 
 #Function to Get Metadata with 2 values AWS Region and Data Key
 function Get-InstanceMetadata
 {
             param(
-                [Parameter(mandatory=$true)]
-                [ValidateSet('af-south-1','ap-east-1','ap-northeast-1','ap-northeast-2','ap-northeast-3','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-North-1','eu-south-1','eu-west-1','eu-west-2','eu-west-1','us-east-1','us-east-2','us-west-1','us-west-2')]
-                [string[]]
-                $AWSRegion,
 
                 [ValidateSet('Name','InstanceID','PrivateIP','LaunchTime','Licenses','Monitoring','NetworkInterfaces','Staten','SubnetId','Architecture','BootMode','ClientToken','Hypervisor','KeyName','PublicIpAddress','SecurityGroups','InstanceType','AmiID')]
                 [string] $DataKey
 
             )
-
-
-                        Initialize-AWSDefaults -Region  $AWSRegion -AccessKey $AccessKey -SecretKey $SecretKey 
+                        Initialize-AWSDefaults -Region $AWSRegion -AccessKey 'AKIARA7G5AZGV6EGPRPV' -SecretKey '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'
 
                                 #Fetches instances in current region
                                 $ListOfInstances = Get-EC2Instance 
 
                                 #Creating Custom Objects for all values
-                                $InstanceDetails = $ec2List.Instances| ForEach-Object {
+                                $InstanceDetails = $ListOfInstances.Instances| ForEach-Object {
                                     $properties = [ordered]@{
                                     Name         = ($_ | Select-Object -ExpandProperty tags | Where-Object -Property Key -eq Name).value
                                     InstanceID    = $_.InstanceId

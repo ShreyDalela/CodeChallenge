@@ -5,14 +5,20 @@ The below graph will help you traverse through the directories
 
       .                
       ├── Challenge-1                         #Solution For Challenge 1                         
-      |   ├── 3-Tier App
-      |   |    ├── LB
-      |   |    ├── VM
-      |   |    ├── dsc
-      |   |    ├── Set-Credentials.ps1
-      |   |    ├── outputs.tf
-      |   |    ├── var-declaration.tf
-      |   |    └── vnet.tf   
+      |   ├── Bastion-vm.tf
+      |   ├── Readme.md
+      |   ├── tier1-lb.tf
+      |   ├── tier1-vm.tf
+      |   ├── tier1-web.ps1
+      |   ├──tier2-app.ps1
+      |   ├──tier2-lb.tf
+      |   ├──tier2-vm.tf
+      |   ├──tier3-lb.tf
+      |   ├──tier3-sql.ps1
+      |   ├──tier3-vm.tf
+      |   ├── outputs.tf
+      |   ├── var-declaration.tf
+      |   └── vnet.tf   
       |   └── Readme.md
       ├── Challenge-2                         #Solution For Challenge 2                          
       |   ├── Get-InstanceMetadataAWS.ps1

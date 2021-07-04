@@ -21,7 +21,7 @@ function Get-InstanceMetadata
                 [string] $DataKey
 
             )
-                        Initialize-AWSDefaults -Region $AWSRegion -AccessKey 'AKIARA7G5AZGV6EGPRPV' -SecretKey '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'
+                        Initialize-AWSDefaults -Region $AWSRegion -AccessKey $AccessKey -SecretKey $SecretKey
 
                                 #Fetches instances in current region
                                 $ListOfInstances = Get-EC2Instance 

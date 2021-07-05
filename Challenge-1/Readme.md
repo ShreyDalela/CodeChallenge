@@ -51,4 +51,11 @@ The infrastructure deployed whing the defined configuration can be seen as in th
 
 &nbsp;
 &nbsp;
+&nbsp;
 
+## 
+Apart from the scope of the challance to deploy a basic 3-Tier solution, we can also for more fuller and complex architectural approach like below.
+## Global N-tire Application Architecture
+![Regional](https://github.com/ShreyDalela/CodeChallenge/blob/e3417878ece5f20a4bd90312ecd6e924fb0be6a9/Challenge-1/Regional.png)
+## Azure PaaS heavy Architecture
+![Azure PaaS](https://github.com/ShreyDalela/CodeChallenge/blob/e383b04f52e3d2f36c5977396e1062eac3a923b7/Challenge-1/complex.png)
